@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>highcharts</title>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+<body>
+
+    <h1>Feriados</h1>
+
+    <div id="feriados"></div>
+    <script>
+
+        async function getFeriados() {
+
+            let meses = [];
+            meses[0] = "Janeiro",
+                meses[1] = "Fevereiro",
+                meses[2] = "Marco",
+                meses[3] = "Abril",
+                meses[4] = "Maio",
+                meses[5] = "Junho",
+                meses[6] = "Julho",
+                meses[7] = "Agosto",
+                meses[8] = "Septembro",
+                meses[9] = "Outubro",
+                meses[10] = "Novembro",
+                meses[11] = "Dezembro";
+
+            const urlApi = "https://brasilapi.com.br/api/feriados/v1/2022";
+            const response = await fetch(urlApi);
+
+            const result = await response.json();
+
+            let mes = [];
+            let totais = [];
+
+            for (let i = 1; i <=12; i++) {
+                totais.push(0);
+            }
+
+            for (let i = 0; i < result.length; i++) {
+                let feriado = result[i];
+                let date = feriado.date;
+                let month = parseInt(date.substring(5,7));
+                // let month = date.substring(5,9);
+
+                // console.log(month)
+                
+                let dados = totais[(month -1)] += 1
+                // console.log(dados)
+                mes.push(month);
+            }
+
+            console.log(mes);
+            // console.log(totais);
+
+
+
+            Highcharts.chart('feriados',
+                {
+                    title:
+                    {
+                        text: 'Feriados de 2022 quantidade por mês'
+                    },
+                    xAxis:
+                    {
+                        title:
+                        {
+                            text: 'Meses'
+                        },
+                        categories: meses
+                    },
+                    // yAxis:
+                    // {
+                    //     title:
+                    //     {
+                    //         text: 'Dias'
+                    //     },
+                    //     categories: totais
+                    // },
+                    series: [
+                        {
+                            type: 'areaspline',
+                            name: 'valores',
+                            data: totais
+                        }
+                    ]
+                });
+
+
+        }
+
+        getFeriados();
+
+    </script>
+
+    Funcionalidade do highcharts => line, spline, area, areaspline, column, bar, pie, scatter
+
+</body>
+
+</html>

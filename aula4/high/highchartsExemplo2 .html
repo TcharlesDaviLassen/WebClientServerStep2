@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+
+<body>
+
+    <div id="container"></div>
+    <script>
+
+        Highcharts.setOptions({
+            chart: {
+                backgroundColor: {
+                    linearGradient: [0, 0, 500, 500],
+                    stops: [
+                        [0, 'rgb(255, 255, 255)'],
+                        [1, 'rgb(240, 240, 255)']
+                    ]
+                },
+                borderWidth: 2,
+                plotBackgroundColor: 'rgba(255, 255, 255, .9)',
+                plotShadow: true,
+                plotBorderWidth: 1
+            }
+        });
+
+        Highcharts.chart('container',
+            {
+                title:
+                {
+                    text: 'Título do gráfico'
+                },
+                xAxis:
+                {
+                    title:
+                    {
+                        text: 'Vendas'
+                    },
+                    categories: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho']
+                },
+                series: [
+                    {
+                        type: 'areaspline',
+                        name: 'valores',
+                        data: [300, 410, 550, 662, 780, 800, 900]
+                    }
+                ]
+            });
+    </script>
+    Funcionalidade do highcharts => line, spline, area, areaspline, column, bar, pie, scatter
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Marcela Pereira",
+        "createdAt": "2022-09-06T19: 45: 01.329Z",
+        "updatedAt": "2022-09-06T19: 45: 01.329Z"
+    },
+    {
+        "id": 2,
+        "name": "Kaique Monteiro",
+        "createdAt": "2022-09-06T19: 45: 06.503Z",
+        "updatedAt": "2022-09-06T19: 45: 06.503Z"
+    },
+    {
+        "id": 3,
+        "name": "Jessica Moureira",
+        "createdAt": "2022-09-21T00: 49: 08.228Z",
+        "updatedAt": "2022-09-21T00: 49: 08.228Z"
+    },
+    {
+        "id": 4,
+        "name": "Pablo Marcante",
+        "createdAt": "2022-09-21T00: 49: 19.268Z",
+        "updatedAt": "2022-09-21T00: 49: 19.268Z"
+    },
+    {
+        "id": 5,
+        "name": "Juca Bala",
+        "createdAt": "2022-09-21T00: 49: 26.026Z",
+        "updatedAt": "2022-09-21T00: 49: 26.026Z"
+    },
+    {
+        "id": 6,
+        "name": "Larissa da Silva",
+        "createdAt": "2022-09-21T00: 49: 36.629Z",
+        "updatedAt": "2022-09-21T00: 49: 36.629Z"
+    }
+]
