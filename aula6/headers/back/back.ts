@@ -10,12 +10,12 @@ app.use(cors());
 
 app.get("/auth", async function(req:Request, res: Response)
 {
-    
+    console.log("Usando o auth")
     let username = req.headers.username +"";
     let password =  req.headers.password +"";
-
+    
     console.log(username, password);
-
+    
     let logado = await Usuario.localizaUsuarios(username, password);
     console.log(logado?.toJSON());
 
@@ -25,6 +25,7 @@ app.get("/auth", async function(req:Request, res: Response)
 app.get("/verify", async function(req:Request, res: Response)
 {
     
+    console.log("Usando o verify")
     let username = req.headers.username +"";
     let password =  req.headers.password +"";
 
