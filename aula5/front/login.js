@@ -55,7 +55,7 @@ async function verify() {
     console.log(result);
 
     console.log("Dados")
-    console.log(result.logged)
+    console.log(result.loggedIn)
     console.log(result.username)
     
     if (result.loggedIn != "undefined") {
